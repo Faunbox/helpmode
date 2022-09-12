@@ -1,15 +1,12 @@
-import { Container, Grid, Image, Link, Text } from "@nextui-org/react";
+import { Col, Container, Grid, Image, Link, Text } from "@nextui-org/react";
 
 const DesktopNavbar = () => {
   return (
-    <nav
-      className="navbar"
-      style={{ backgroundColor: "#333", borderBottom: "4px solid yellow" }}
-    >
+    <nav className="navbar" style={{ backgroundColor: "#333" }}>
       <Container>
-        <Grid.Container direction="column" gap={1}>
+        <Grid.Container direction="row" gap={1}>
           <Grid xs={12} justify="center" alignItems="center">
-            <Grid xs={4} direction="row">
+            <Grid xs={2} direction="row">
               <Image
                 src="/images/logo.png"
                 alt="laweta żywiec"
@@ -17,34 +14,41 @@ const DesktopNavbar = () => {
                 height={80}
                 width={80}
               />
-              <Text h1 color="yellow">
+              {/* <Text h1 color="yellow">
                 Help<span style={{ color: "white" }}>Mode</span>
+              </Text> */}
+            </Grid>
+
+            <Grid xs={7} justify="space-around" alignItems="center">
+              <Text color="white" h4 css={{ cursor: "pointer" }}>
+                <Link data-scroll href="#hero">
+                  Laweta
+                </Link>
+              </Text>
+              <Text color="white" h4>
+                <Link data-scroll href="#offert">
+                  Usługi
+                </Link>
+              </Text>
+              <Text color="white" h4>
+                Galeria
+              </Text>
+              <Text color="white" h4>
+                Kontakt
               </Text>
             </Grid>
-            <Grid xs={8} justify="flex-end">
+            <Grid xs={3} sm={6} justify="flex-end">
               <Link href="phoneto:99999999">
-                <Text h3 color="yellow">
-                  Telefon czynny 24/7:
-                  <Text h3 color="yellow">
+                <Col>
+                  <Text h4 color="#F5A524">
+                    Telefon czynny 24/7:
+                  </Text>
+                  <Text h4 color="#F5A524">
                     604-181-632
                   </Text>
-                </Text>
+                </Col>
               </Link>
             </Grid>
-          </Grid>
-          <Grid xs={12} justify="space-around" alignItems="center">
-            <Text color="white" h4>
-              Strona główna
-            </Text>
-            <Text color="white" h4>
-              Usługi
-            </Text>
-            <Text color="white" h4>
-              Cennik
-            </Text>
-            <Text color="white" h4>
-              Kontakt
-            </Text>
           </Grid>
         </Grid.Container>
       </Container>

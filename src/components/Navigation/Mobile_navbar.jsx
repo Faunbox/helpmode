@@ -6,7 +6,6 @@ const MobileNavbar = () => {
       className="navbar-mobile"
       style={{
         backgroundColor: "#333",
-        borderBottom: "4px solid yellow",
       }}
     >
       <Container>
@@ -23,11 +22,12 @@ const MobileNavbar = () => {
           </Grid>
           <Grid xs={8} justify={"flex-end"} alignItems="center">
             <Dropdown>
-              <Dropdown.Button>Menu</Dropdown.Button>
+              <Dropdown.Button color={"warning"}>Menu</Dropdown.Button>
               <Dropdown.Menu>
-                <Dropdown.Item key={"yes"}>Tak</Dropdown.Item>
-                <Dropdown.Item key={"no"}>no</Dropdown.Item>
-                <Dropdown.Item key={"maybe"}>mb</Dropdown.Item>
+                <Dropdown.Item key={"laweta"}>Laweta</Dropdown.Item>
+                <Dropdown.Item key={"uslugi"}>Usługi</Dropdown.Item>
+                <Dropdown.Item key={"pricing"}>Galeria</Dropdown.Item>
+                <Dropdown.Item key={"contact"}>Kontakt</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </Grid>

@@ -1,0 +1,8 @@
+{
+  "navLinks": [
+    { "navLinkId": "Laweta", "scrollToId": "hero" },
+    { "navLinkId": "Usługi", "scrollToId": "offert" },
+    { "navLinkId": "Galeria", "scrollToId": "gallery" },
+    { "navLinkId": "Kontakt", "scrollToId": "contact" }
+  ]
+}
