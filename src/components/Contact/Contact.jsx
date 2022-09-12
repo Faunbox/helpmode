@@ -46,24 +46,57 @@ const Contact = () => {
         </Grid>
         <Grid xs={12} sm={5}>
           <Card variant="bordered">
-            <Card.Body>
-              <Input placeholder="Imie" aria-label="name" />
-              <Spacer y={2} />
-              <Input placeholder="Adres email" aria-label="email" />
-              <Spacer y={2} />
-              <Textarea placeholder="Tresc wiadomosci" aria-label="message" />
-              <Spacer y={1} />
-              <Checkbox size="sm" defaultSelected={false} isRequired={true}>
-                Wyrażam zgodę na przetwarzanie podanych w formularzu kontaktowym
-                danych w celu nawiązania kontaktu, odpowiedzi na zadane pytania
-                i przesłanie oferty turystycznej środkami komunikacji
-                elektronicznej i telefonicznie (zgoda konieczna dla odpowiedzi
-                na zadane pytania i wysłania żądanej oferty)
-              </Checkbox>
-            </Card.Body>
-            <Card.Footer>
-              <Button color={"warning"}>Wyslij wiadomosc</Button>
-            </Card.Footer>
+            <form
+              name="sentMessage"
+              validate="true"
+              method="POST"
+              action="https://formsubmit.io/send/kontakt@zywiec-laweta.pl"
+            >
+              <Card.Body>
+                <Input
+                  placeholder="Imie"
+                  aria-label="name"
+                  type={"text"}
+                  name="name"
+                />
+                <Spacer y={2} />
+                <Input
+                  placeholder="Adres email"
+                  aria-label="email"
+                  type={"email"}
+                  name="email"
+                />
+                <Spacer y={2} />
+                <Textarea
+                  placeholder="Tresc wiadomosci"
+                  aria-label="message"
+                  name="message"
+                />
+                <Spacer y={1} />
+                <Checkbox size="sm" defaultSelected={false} isRequired={true}>
+                  Wyrażam zgodę na przetwarzanie podanych w formularzu
+                  kontaktowym danych w celu nawiązania kontaktu, odpowiedzi na
+                  zadane pytania i przesłanie oferty środkami komunikacji
+                  elektronicznej (zgoda konieczna dla odpowiedzi na zadane
+                  pytania i wysłania żądanej oferty)
+                </Checkbox>
+                <input
+                  type="hidden"
+                  name="_next"
+                  value="https://yourdomain.co/thanks.html"
+                ></input>
+                <input
+                  type="text"
+                  name="_honey"
+                  style={{ display: "none" }}
+                ></input>
+              </Card.Body>
+              <Card.Footer>
+                <Button color={"warning"} type="submit">
+                  Wyslij wiadomosc
+                </Button>
+              </Card.Footer>
+            </form>
           </Card>
         </Grid>
       </Grid.Container>

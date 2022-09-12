@@ -31,14 +31,18 @@ const DesktopNavbar = () => {
                 </Link>
               </Text>
               <Text color="white" h4>
-                Galeria
+                <Link data-scroll href="#gallery">
+                  Galeria
+                </Link>
               </Text>
               <Text color="white" h4>
-                Kontakt
+                <Link data-scroll href="#contact">
+                  Kontakt
+                </Link>
               </Text>
             </Grid>
             <Grid xs={3} sm={6} justify="flex-end">
-              <Link href="phoneto:99999999">
+              <Link href="phone:99999999">
                 <Col>
                   <Text h4 color="#F5A524">
                     Telefon czynny 24/7:

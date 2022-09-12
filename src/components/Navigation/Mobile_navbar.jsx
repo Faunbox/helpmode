@@ -1,4 +1,4 @@
-import { Container, Dropdown, Grid, Image } from "@nextui-org/react";
+import { Container, Dropdown, Grid, Image, Link } from "@nextui-org/react";
 
 const MobileNavbar = () => {
   return (
@@ -24,10 +24,28 @@ const MobileNavbar = () => {
             <Dropdown>
               <Dropdown.Button color={"warning"}>Menu</Dropdown.Button>
               <Dropdown.Menu>
-                <Dropdown.Item key={"laweta"}>Laweta</Dropdown.Item>
-                <Dropdown.Item key={"uslugi"}>Usługi</Dropdown.Item>
-                <Dropdown.Item key={"pricing"}>Galeria</Dropdown.Item>
-                <Dropdown.Item key={"contact"}>Kontakt</Dropdown.Item>
+                <Dropdown.Item key={"laweta"}>
+                  {" "}
+                  <Link data-scroll href="#hero" color={"white"}>
+                    Laweta
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item key={"uslugi"}>
+                  <Link data-scroll href="#offert" color={"white"}>
+                    Usług
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item key={"pricing"}>
+                  <Link data-scroll href="#gallery" color={"white"}>
+                    Galeria
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item key={"contact"}>
+                  {" "}
+                  <Link data-scroll href="#contact" color={"black"}>
+                    Kontakt
+                  </Link>
+                </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </Grid>
