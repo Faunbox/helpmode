@@ -215,8 +215,9 @@ const Offert = () => {
               <Card.Body css={{ py: "$10" }}>
                 <Text>
                   W naszej ofercie można skorzystać również z wypożyczalni
-                  przyczep do …t. Staramy się dostosować termin do wymagań
-                  klienta.
+                  przyczep do 750kg DMC. Staramy się dostosować termin do
+                  wymagań klienta. W celu wyceny zapraszamy do kontaktu
+                  telefonicznego lub poprzez formularz kontaktowy.
                 </Text>
               </Card.Body>
               <Card.Divider />
