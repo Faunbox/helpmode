@@ -1,4 +1,4 @@
-import { Container, Grid, Image, Text } from "@nextui-org/react";
+import { Container, Grid, Image, Link, Text } from "@nextui-org/react";
 
 const Footer = () => {
   return (
@@ -33,9 +33,14 @@ const Footer = () => {
                 HelpMode - POMOC DROGOWA LAWETA | HOLOWANIE | AUTO POMOC |
                 AUTOLAWETA
               </Text>
+              <Text color="white">NIP: 5532408141</Text>
               <Text color="white">Obszar dzialania: Zywiec i okolice</Text>
-              <Text color="white">tel. +48 999-999-999</Text>
-              <Text color="white">e-mail: kontakt@kontakt.pl</Text>
+              <Link href="tel:501509756">
+                <Text color="white">tel. +48 501-509-756</Text>
+              </Link>
+              <Link href="mailto:kontakt@zywiec-laweta.pl">
+                <Text color="white">e-mail: kontakt@zywiec-laweta.pl</Text>
+              </Link>
             </Container>
           </Grid>
           <Grid xs={12} justify="center" css={{ py: 15 }}>

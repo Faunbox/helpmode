@@ -1,4 +1,12 @@
-import { Container, Dropdown, Grid, Image, Link } from "@nextui-org/react";
+import {
+  Container,
+  Dropdown,
+  Grid,
+  Image,
+  Link,
+  Text,
+} from "@nextui-org/react";
+import { motion } from "framer-motion";
 
 const MobileNavbar = () => {
   return (
@@ -20,30 +28,53 @@ const MobileNavbar = () => {
               width={80}
             />
           </Grid>
-          <Grid xs={8} justify={"flex-end"} alignItems="center">
+          <Grid xs={4} justify={"flex-end"} alignItems="center">
+            <Link href="tel:999999999">
+              <motion.div
+                initial={{ scale: 0.95 }}
+                animate={{ scale: [1, 1.1] }}
+                exit={{ scale: 0.95 }}
+                transition={{
+                  duration: 0.8,
+                  yoyo: Infinity,
+                  ease: "easeOut",
+                }}
+              >
+                <Image src="images/phone.svg" width={50} height={50} />
+              </motion.div>
+            </Link>
+          </Grid>
+          <Grid xs={4} justify={"flex-end"} alignItems="center">
             <Dropdown>
-              <Dropdown.Button color={"warning"}>Menu</Dropdown.Button>
+              <Dropdown.Button color={"warning"}></Dropdown.Button>
               <Dropdown.Menu>
                 <Dropdown.Item key={"laweta"}>
-                  {" "}
                   <Link data-scroll href="#hero" color={"white"}>
-                    Laweta
+                    <Text color={"#333"} b>
+                      Laweta
+                    </Text>
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Item key={"uslugi"}>
                   <Link data-scroll href="#offert" color={"white"}>
-                    Usług
+                    <Text color={"#333"} b>
+                      Usług
+                    </Text>
                   </Link>
                 </Dropdown.Item>
-                <Dropdown.Item key={"pricing"}>
-                  <Link data-scroll href="#gallery" color={"white"}>
-                    Galeria
+                <Dropdown.Item key={"pricing"} color={"white"}>
+                  <Link data-scroll href="#gallery">
+                    <Text color={"#333"} b>
+                      Galeria
+                    </Text>
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Item key={"contact"}>
                   {" "}
                   <Link data-scroll href="#contact" color={"black"}>
-                    Kontakt
+                    <Text color={"#333"} b>
+                      Kontakt
+                    </Text>
                   </Link>
                 </Dropdown.Item>
               </Dropdown.Menu>

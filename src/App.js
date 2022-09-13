@@ -6,11 +6,6 @@ import Footer from "./components/Footer/Footer";
 import Hero from "./components/Hero/HeroSection";
 import Navigation from "./components/Navigation/Navigation";
 
-export const scroll = new SmoothScroll('a[href*="#"]', {
-  speed: 1200,
-  speedAsDuration: true,
-});
-
 function App() {
   const Gallery = lazy(() => import("./components/Gallery/Gallery"));
   const Offert = lazy(() => import("./components/Offert/Offert"));
@@ -35,3 +30,8 @@ function App() {
 }
 
 export default App;
+
+export const scroll = new SmoothScroll('a[href*="#"]', {
+  speed: 1200,
+  speedAsDuration: true,
+});

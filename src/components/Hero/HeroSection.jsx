@@ -63,7 +63,9 @@ const Hero = () => {
                     </motion.div>
                   </Grid>
                   <Grid xs={12} sm={6} justify={"center"}>
-                    <Button color={"warning"}>Wypozyczenie przyczepy</Button>
+                    <Link data-scroll href="#contact">
+                      <Button color={"warning"}>Wypozyczenie przyczepy</Button>
+                    </Link>
                   </Grid>
                 </Grid.Container>
               </Grid>

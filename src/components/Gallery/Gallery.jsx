@@ -1,7 +1,22 @@
 import { Container, Grid, Image, Text } from "@nextui-org/react";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import Lightbox from "react-image-lightbox";
+import "react-image-lightbox/style.css";
 
 const Gallery = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [photoIndex, setPhotoIndex] = useState(0);
+
+  const imageGallery = [
+    { src: "images/pomoc.jpeg", alt: "pomoc drogowa" },
+    { src: "images/insignia.jpg", alt: "laweta" },
+    { src: "images/merc.jpg", alt: "laweta" },
+    { src: "images/transport.jpg", alt: "laweta" },
+    { src: "images/laweta.jpg", alt: "laweta" },
+    { src: "images/przyczepa.jpg", alt: "laweta" },
+  ];
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -23,48 +38,53 @@ const Gallery = () => {
               Galeria
             </Text>
           </Grid>
-          <Grid xs={12} sm={4} md={3} justify="center">
-            <Image
-              showSkeleton
-              src="images/pomoc.jpeg"
-              alt="laweta"
-              objectFit="cover"
-              width={300}
-              height={300}
-            />
-          </Grid>
-          <Grid xs={12} sm={4} md={3} justify="center">
-            <Image
-              showSkeleton
-              src="images/insignia.jpg"
-              alt="laweta"
-              objectFit="cover"
-              width={300}
-              height={300}
-            />
-          </Grid>
-          <Grid xs={12} sm={4} md={3} justify="center">
-            <Image
-              showSkeleton
-              src="images/merc.jpg"
-              alt="laweta"
-              objectFit="cover"
-              width={300}
-              height={300}
-            />
-          </Grid>
-          <Grid xs={12} sm={4} md={3} justify="center">
-            <Image
-              showSkeleton
-              src="images/transport.jpg"
-              alt="laweta"
-              objectFit="cover"
-              width={300}
-              height={300}
-            />
-          </Grid>
+          {imageGallery.map((image, id) => (
+            <Grid
+              xs={12}
+              sm={4}
+              md={3}
+              justify="center"
+              onClick={() => {
+                setIsOpen(true);
+                setPhotoIndex(id);
+              }}
+              css={{ cursor: "pointer" }}
+            >
+              <motion.div whileHover={{ scale: 1.05 }}>
+                <Image
+                  showSkeleton
+                  src={image.src}
+                  alt={image.alt}
+                  objectFit="cover"
+                  width={300}
+                  height={300}
+                />
+              </motion.div>
+            </Grid>
+          ))}
         </Grid.Container>
       </Container>
+
+      {isOpen && (
+        <Lightbox
+          mainSrc={imageGallery[photoIndex].src}
+          nextSrc={imageGallery[(photoIndex + 1) % imageGallery.length].src}
+          prevSrc={
+            imageGallery[
+              (photoIndex + imageGallery.length - 1) % imageGallery.length
+            ].src
+          }
+          onCloseRequest={() => setIsOpen(false)}
+          onMovePrevRequest={() =>
+            setPhotoIndex(
+              (photoIndex + imageGallery.length - 1) % imageGallery.length
+            )
+          }
+          onMoveNextRequest={() =>
+            setPhotoIndex((photoIndex + 1) % imageGallery.length)
+          }
+        />
+      )}
     </motion.div>
   );
 };
