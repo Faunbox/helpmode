@@ -1,14 +1,14 @@
-import { Card, Container, Grid, Button, Text, Modal } from "@nextui-org/react";
-import { useState } from "react";
+import {
+  Card,
+  Container,
+  Grid,
+  Button,
+  Text,
+  Link,
+} from "@nextui-org/react";
 import { motion } from "framer-motion";
 
 const Offert = () => {
-  const [visible, setVisible] = useState(false);
-  const handler = () => setVisible(true);
-
-  const closeHandler = () => {
-    setVisible(false);
-  };
 
   return (
     <motion.div
@@ -40,11 +40,10 @@ const Offert = () => {
               css={{ mw: "330px" }}
               isHoverable
               isPressable
-              onPress={handler}
             >
               <Card.Header>
                 <Text h1 size={"$lg"}>
-                  Laweta
+                  Pomoc drogowa
                 </Text>
               </Card.Header>
               <Card.Divider />
@@ -55,52 +54,22 @@ const Offert = () => {
                   Polski w szczególności województwie śląskim i najbliższych
                   okolic Żywiecczyzny. Oferujemy pomoc przy wymianie koła lub
                   dowóz do wulkanizacji 24/7, dowóz paliwa, wyciąganie z rowów,
-                  śniegu, błota lub zablokowanych kół (na wózkach)
+                  śniegu lub błota
                 </Text>
               </Card.Body>
               <Card.Divider />
               <Card.Footer>
-                <Button color={"warning"} onPress={handler}>
-                  Dowiedz sie wiecej
-                </Button>
-                <Modal
-                  closeButton
-                  aria-labelledby="modal-title"
-                  open={visible}
-                  onClose={closeHandler}
-                >
-                  <Modal.Header>
-                    <Text id="modal-title" size={18}>
-                      Wiecej informacji
-                    </Text>
-                  </Modal.Header>
-                  <Modal.Body>
-                    <Text>
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Architecto amet incidunt eum numquam quae autem? Repellat
-                      saepe enim, unde consequatur eos, sint omnis, ipsam harum
-                      dolor illo est deserunt ipsum.
-                    </Text>
-                  </Modal.Body>
-                  <Modal.Footer>
-                    <Button auto flat color="error" onClick={closeHandler}>
-                      Close
-                    </Button>
-                  </Modal.Footer>
-                </Modal>
+                <Link href={"/#contact"}>
+                  <Button color={"warning"}>Dowiedz sie wiecej</Button>
+                </Link>
               </Card.Footer>
             </Card>
           </Grid>
           <Grid xs={12} sm={6} md={4} lg={3} justify="center">
-            <Card
-              css={{ mw: "330px" }}
-              isHoverable
-              isPressable
-              onPress={handler}
-            >
+            <Card css={{ mw: "330px" }} isHoverable>
               <Card.Header>
                 <Text h1 size={"$lg"}>
-                  Holowanie
+                  Transport
                 </Text>
               </Card.Header>
               <Card.Divider />
@@ -109,40 +78,15 @@ const Offert = () => {
                   Holujemy samochód do najbliższego zakładu naprawy lub
                   wskazanego miejsca. Zajmujemy się przewozem samochodów
                   osobowych, motocykli, a także maszyn budowlanych oraz
-                  rolniczych. Nasza pomoc drogowa przetransportuje Twój pojazd
-                  tanio, szybko i przede wszystkim bezpiecznie.
+                  rolniczych. Przetransportujemy Twój pojazd tanio, szybko i
+                  przede wszystkim bezpiecznie.
                 </Text>
               </Card.Body>
               <Card.Divider />
               <Card.Footer>
-                <Button color={"warning"} onPress={handler}>
-                  Dowiedz sie wiecej
-                </Button>
-                <Modal
-                  closeButton
-                  aria-labelledby="modal-title"
-                  open={visible}
-                  onClose={closeHandler}
-                >
-                  <Modal.Header>
-                    <Text id="modal-title" size={18}>
-                      Wiecej informacji
-                    </Text>
-                  </Modal.Header>
-                  <Modal.Body>
-                    <Text>
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Architecto amet incidunt eum numquam quae autem? Repellat
-                      saepe enim, unde consequatur eos, sint omnis, ipsam harum
-                      dolor illo est deserunt ipsum.
-                    </Text>
-                  </Modal.Body>
-                  <Modal.Footer>
-                    <Button auto flat color="error" onClick={closeHandler}>
-                      Close
-                    </Button>
-                  </Modal.Footer>
-                </Modal>
+                <Link href={"/#contact"}>
+                  <Button color={"warning"}>Dowiedz sie wiecej</Button>
+                </Link>
               </Card.Footer>
             </Card>
           </Grid>
@@ -151,11 +95,10 @@ const Offert = () => {
               css={{ mw: "330px" }}
               isHoverable
               isPressable
-              onPress={handler}
             >
               <Card.Header>
                 <Text h1 size={"$lg"}>
-                  Przewoz osob
+                  Przewóz osób
                 </Text>
               </Card.Header>
               <Card.Divider />
@@ -168,34 +111,9 @@ const Offert = () => {
               </Card.Body>
               <Card.Divider />
               <Card.Footer>
-                <Button color={"warning"} onPress={handler}>
-                  Dowiedz sie wiecej
-                </Button>
-                <Modal
-                  closeButton
-                  aria-labelledby="modal-title"
-                  open={visible}
-                  onClose={closeHandler}
-                >
-                  <Modal.Header>
-                    <Text id="modal-title" size={18}>
-                      Wiecej informacji
-                    </Text>
-                  </Modal.Header>
-                  <Modal.Body>
-                    <Text>
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Architecto amet incidunt eum numquam quae autem? Repellat
-                      saepe enim, unde consequatur eos, sint omnis, ipsam harum
-                      dolor illo est deserunt ipsum.
-                    </Text>
-                  </Modal.Body>
-                  <Modal.Footer>
-                    <Button auto flat color="error" onClick={closeHandler}>
-                      Close
-                    </Button>
-                  </Modal.Footer>
-                </Modal>
+                <Link href={"/#contact"}>
+                  <Button color={"warning"}>Dowiedz sie wiecej</Button>
+                </Link>
               </Card.Footer>
             </Card>
           </Grid>
@@ -204,7 +122,6 @@ const Offert = () => {
               css={{ mw: "330px" }}
               isHoverable
               isPressable
-              onPress={handler}
             >
               <Card.Header>
                 <Text h1 size={"$lg"}>
@@ -222,34 +139,9 @@ const Offert = () => {
               </Card.Body>
               <Card.Divider />
               <Card.Footer>
-                <Button color={"warning"} onPress={handler}>
-                  Dowiedz sie wiecej
-                </Button>
-                <Modal
-                  closeButton
-                  aria-labelledby="modal-title"
-                  open={visible}
-                  onClose={closeHandler}
-                >
-                  <Modal.Header>
-                    <Text id="modal-title" size={18}>
-                      Wiecej informacji
-                    </Text>
-                  </Modal.Header>
-                  <Modal.Body>
-                    <Text>
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Architecto amet incidunt eum numquam quae autem? Repellat
-                      saepe enim, unde consequatur eos, sint omnis, ipsam harum
-                      dolor illo est deserunt ipsum.
-                    </Text>
-                  </Modal.Body>
-                  <Modal.Footer>
-                    <Button auto flat color="error" onClick={closeHandler}>
-                      Close
-                    </Button>
-                  </Modal.Footer>
-                </Modal>
+                <Link href={"/#contact"}>
+                  <Button color={"warning"}>Dowiedz sie wiecej</Button>
+                </Link>
               </Card.Footer>
             </Card>
           </Grid>

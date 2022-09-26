@@ -1,4 +1,5 @@
 import {
+  Col,
   Container,
   Dropdown,
   Grid,
@@ -14,6 +15,13 @@ const MobileNavbar = () => {
       className="navbar-mobile"
       style={{
         backgroundColor: "#333",
+        position: "sticky",
+        top: "0",
+        left: "0",
+        zIndex: "500",
+        borderBottom: "10px solid black",
+        borderImage:
+          "repeating-linear-gradient(-45deg, #000, #000 10px,  #ffb101 10px,    #ffb101 20px  ) 10",
       }}
     >
       <Container>
@@ -29,24 +37,30 @@ const MobileNavbar = () => {
             />
           </Grid>
           <Grid xs={4} justify={"flex-end"} alignItems="center">
-            <Link href="tel:999999999">
+            <Link href="tel:501509756">
               <motion.div
                 initial={{ scale: 0.95 }}
                 animate={{ scale: [1, 1.1] }}
                 exit={{ scale: 0.95 }}
                 transition={{
                   duration: 0.8,
-                  yoyo: Infinity,
+                  repeat: Infinity,
+                  repeatType: "reverse",
                   ease: "easeOut",
                 }}
               >
-                <Image src="images/phone.svg" width={50} height={50} />
+                <Col>
+                  <Image src="images/phone.svg" width={50} height={50} />
+                  <Text b color={"white"}>
+                    501-509-756
+                  </Text>
+                </Col>
               </motion.div>
             </Link>
           </Grid>
           <Grid xs={4} justify={"flex-end"} alignItems="center">
             <Dropdown>
-              <Dropdown.Button color={"warning"}></Dropdown.Button>
+              <Dropdown.Button color={"warning"}> </Dropdown.Button>
               <Dropdown.Menu>
                 <Dropdown.Item key={"laweta"}>
                   <Link data-scroll href="#hero" color={"white"}>
@@ -58,7 +72,7 @@ const MobileNavbar = () => {
                 <Dropdown.Item key={"uslugi"}>
                   <Link data-scroll href="#offert" color={"white"}>
                     <Text color={"#333"} b>
-                      Usług
+                      Usługi
                     </Text>
                   </Link>
                 </Dropdown.Item>

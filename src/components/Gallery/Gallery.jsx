@@ -49,6 +49,7 @@ const Gallery = () => {
                 setPhotoIndex(id);
               }}
               css={{ cursor: "pointer" }}
+              key={id}
             >
               <motion.div whileHover={{ scale: 1.05 }}>
                 <Image

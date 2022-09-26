@@ -4,14 +4,19 @@ import {
   Checkbox,
   Container,
   Grid,
+  Image,
   Input,
+  Link,
   Spacer,
   Text,
   Textarea,
 } from "@nextui-org/react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const Contact = () => {
+  const [emailAccept, setEmailAccept] = useState(false);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -55,6 +60,34 @@ const Contact = () => {
               W celu przyspieszenia kontaktu zapraszamy również do kontaktu
               telefonicznego.
             </Text>
+            <Spacer y={1} />
+            <Text h3>Dane kontaktowe:</Text>
+            <Link href={"tel:501509756"}>
+              <Text b size={"large"}>
+                Numer telefonu: 501 509 756
+              </Text>
+            </Link>{" "}
+            <Link href="https://api.whatsapp.com/send?phone=501509756">
+              <Text b size={"large"}>
+                Whatsapp: 501 509 767
+              </Text>
+            </Link>
+            <Link href={"mailto:kontakt@zywiec-laweta.pl"}>
+              <Text b size={"large"}>
+                Adres Email: kontakt@zywiec-laweta.pl
+              </Text>
+            </Link>
+            <Text b size={"large"}>
+              NIP: 5532408141
+            </Text>
+            <Spacer y={1} />
+            <Text h3>Zapraszamy również na nasz fanpage!</Text>
+            <Link
+              href={"https://www.facebook.com/profile.php?id=100084846997298"}
+              target={"_blank"}
+            >
+              <Image src={"/images/facebook.svg"} alt={"facebook_icon"} />
+            </Link>
           </Grid>
           <Grid xs={12} sm={5}>
             <Card variant="bordered">
@@ -66,10 +99,12 @@ const Contact = () => {
               >
                 <Card.Body>
                   <Input
-                    placeholder="Imie"
+                    placeholder="Imie lub nazwa firmy"
                     aria-label="name"
                     type={"text"}
                     name="name"
+                    required
+                    clearable
                   />
                   <Spacer y={2} />
                   <Input
@@ -77,15 +112,25 @@ const Contact = () => {
                     aria-label="email"
                     type={"email"}
                     name="email"
+                    required
+                    clearable
+                    
                   />
                   <Spacer y={2} />
                   <Textarea
                     placeholder="Tresc wiadomosci"
                     aria-label="message"
                     name="message"
+                    required
+                    minLength={5}
                   />
                   <Spacer y={1} />
-                  <Checkbox size="sm" defaultSelected={false} isRequired={true}>
+                  <Checkbox
+                    size="sm"
+                    defaultSelected={false}
+                    isRequired={true}
+                    onChange={() => setEmailAccept(!emailAccept)}
+                  >
                     Wyrażam zgodę na przetwarzanie podanych w formularzu
                     kontaktowym danych w celu nawiązania kontaktu, odpowiedzi na
                     zadane pytania i przesłanie oferty środkami komunikacji
@@ -93,20 +138,21 @@ const Contact = () => {
                     pytania i wysłania żądanej oferty)
                   </Checkbox>
                   <input
-                    type="hidden"
-                    name="_next"
-                    value="https://yourdomain.co/thanks.html"
-                  ></input>
-                  <input
                     type="text"
                     name="_honey"
                     style={{ display: "none" }}
                   ></input>
                 </Card.Body>
                 <Card.Footer>
-                  <Button color={"warning"} type="submit">
-                    Wyslij wiadomosc
-                  </Button>
+                  {emailAccept ? (
+                    <Button color={"warning"} type="submit">
+                      Wyslij wiadomosc
+                    </Button>
+                  ) : (
+                    <Button color={"warning"} type="submit" disabled>
+                      Wyslij wiadomosc
+                    </Button>
+                  )}
                 </Card.Footer>
               </form>
             </Card>

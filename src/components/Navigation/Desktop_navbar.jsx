@@ -3,7 +3,19 @@ import { motion } from "framer-motion";
 
 const DesktopNavbar = () => {
   return (
-    <nav className="navbar" style={{ backgroundColor: "#333" }}>
+    <nav
+      className="navbar"
+      style={{
+        backgroundColor: "#333",
+        position: "sticky",
+        top: "0",
+        left: "0",
+        zIndex: "500",
+        borderBottom: "10px solid black",
+        borderImage:
+          "repeating-linear-gradient(-45deg, #000, #000 10px,  #ffb101 10px,    #ffb101 20px  ) 10",
+      }}
+    >
       <Container>
         <Grid.Container direction="row" gap={1}>
           <Grid xs={12} justify="center" alignItems="center">
