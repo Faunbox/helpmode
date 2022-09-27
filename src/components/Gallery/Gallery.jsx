@@ -22,6 +22,7 @@ const Gallery = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.2 }}
+      style={{ background: 'url("/images/wickedbackground.svg")' }}
     >
       <Container id="gallery">
         <Grid.Container justify="space-around" gap={2}>
@@ -59,6 +60,7 @@ const Gallery = () => {
                   objectFit="cover"
                   width={300}
                   height={300}
+                  css={{ borderRadius: "20px" }}
                 />
               </motion.div>
             </Grid>

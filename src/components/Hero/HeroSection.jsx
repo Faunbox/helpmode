@@ -3,10 +3,11 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <>
+    <div style={{ background: 'url("/images/wickedbackground.svg")' }}>
       <Container
         css={{
-          minHeight: "80vh",
+          minHeight: "90vh",
+          position: "relative",
         }}
         justify="center"
         alignItems="center"
@@ -22,6 +23,7 @@ const Hero = () => {
               objectFit="cover"
               height={600}
               className="hero-image"
+              css={{ borderRadius: "50px" }}
             />
           </Grid>
           <Grid xs={12} sm={6} direction={"column"}>
@@ -52,16 +54,16 @@ const Hero = () => {
                     }}
                     animate={{ y: ["20%", "-20%"] }}
                   >
-                    <Button color={"warning"}>
-                      <Link css={{ color: "white" }} href="tel:501509756">
+                    <Button color={"#845306"}>
+                      <Link css={{ color: "black" }} href="tel:501509756">
                         Wezwij pomoc
                       </Link>
                     </Button>
                   </motion.div>
                 </Grid>
                 <Grid xs={12} sm={6} justify={"center"}>
-                  <Link data-scroll href="#contact">
-                    <Button color={"warning"}>Wypozyczenie przyczepy</Button>
+                  <Link data-scroll href="#contact" css={{ color: "black" }}>
+                    <Button color={"#845306"}>Wypozyczenie przyczepy</Button>
                   </Link>
                 </Grid>
               </Grid.Container>
@@ -69,7 +71,7 @@ const Hero = () => {
           </Grid>
         </Grid.Container>
       </Container>
-    </>
+    </div>
   );
 };
 
