@@ -3,7 +3,12 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <div style={{ background: 'url("/images/wickedbackground.svg")' }}>
+    <div
+      style={{
+        background: 'url("/images/wickedbackground.svg") no-repeat center',
+        backgroundSize: "cover",
+      }}
+    >
       <Container
         css={{
           minHeight: "90vh",

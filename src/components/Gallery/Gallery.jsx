@@ -22,7 +22,10 @@ const Gallery = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.2 }}
-      style={{ background: 'url("/images/wickedbackground.svg")' }}
+      style={{
+        background: 'url("/images/wickedbackground.svg") no-repeat center',
+        backgroundSize: "cover",
+      }}
     >
       <Container id="gallery">
         <Grid.Container justify="space-around" gap={2}>
