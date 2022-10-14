@@ -11,10 +11,13 @@ const Gallery = () => {
   const imageGallery = [
     { src: "images/pomoc.jpeg", alt: "pomoc drogowa" },
     { src: "images/insignia.jpg", alt: "laweta" },
-    { src: "images/merc.jpg", alt: "laweta" },
-    { src: "images/transport.jpg", alt: "laweta" },
+    { src: "images/merc.jpg", alt: "holowanie" },
+    { src: "images/transport.jpg", alt: "laweta żywiec" },
     { src: "images/laweta.jpg", alt: "laweta" },
-    { src: "images/przyczepa.jpg", alt: "laweta" },
+    { src: "images/IMG20220921133113_40.jpg", alt: "laweta" },
+    { src: "images/IMG20220922120033_1_40.jpg", alt: "laweta" },
+    { src: "images/IMG20221012164003_20.jpg", alt: "laweta" },
+    { src: "images/IMG20221012164547_20.jpg", alt: "laweta" },
   ];
 
   return (
