@@ -9,7 +9,7 @@ import {
 } from "@nextui-org/react";
 import { motion } from "framer-motion";
 
-const MobileNavbar = () => {
+const MobileNavbar = ({ menu }) => {
   return (
     <nav
       className="navbar-mobile"
@@ -62,35 +62,15 @@ const MobileNavbar = () => {
             <Dropdown>
               <Dropdown.Button color={"warning"}> </Dropdown.Button>
               <Dropdown.Menu>
-                <Dropdown.Item key={"laweta"}>
-                  <Link data-scroll href="#hero" color={"white"}>
-                    <Text color={"#333"} b>
-                      Laweta
-                    </Text>
-                  </Link>
-                </Dropdown.Item>
-                <Dropdown.Item key={"uslugi"}>
-                  <Link data-scroll href="#offert" color={"white"}>
-                    <Text color={"#333"} b>
-                      Usługi
-                    </Text>
-                  </Link>
-                </Dropdown.Item>
-                <Dropdown.Item key={"pricing"} color={"white"}>
-                  <Link data-scroll href="#gallery">
-                    <Text color={"#333"} b>
-                      Galeria
-                    </Text>
-                  </Link>
-                </Dropdown.Item>
-                <Dropdown.Item key={"contact"}>
-                  {" "}
-                  <Link data-scroll href="#contact" color={"black"}>
-                    <Text color={"#333"} b>
-                      Kontakt
-                    </Text>
-                  </Link>
-                </Dropdown.Item>
+                {menu?.map((nav) => (
+                  <Dropdown.Item key={nav.scrollToId}>
+                    <Link data-scroll href={nav.scrollToId} color={"white"}>
+                      <Text color={"#333"} b>
+                        {nav.navLinkId}
+                      </Text>
+                    </Link>
+                  </Dropdown.Item>
+                ))}
               </Dropdown.Menu>
             </Dropdown>
           </Grid>

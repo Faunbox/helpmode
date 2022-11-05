@@ -1,11 +1,11 @@
 import DesktopNavbar from "./Desktop_navbar";
 import MobileNavbar from "./Mobile_navbar";
 
-const Navigation = () => {
+const Navigation = ({ data }) => {
   return (
     <>
-      <DesktopNavbar />
-      <MobileNavbar />
+      <DesktopNavbar menu={data} />
+      <MobileNavbar menu={data} />
     </>
   );
 };

@@ -4,21 +4,9 @@ import { useState } from "react";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
 
-const Gallery = () => {
+const Gallery = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
-
-  const imageGallery = [
-    { src: "images/pomoc.jpeg", alt: "pomoc drogowa" },
-    { src: "images/insignia.jpg", alt: "laweta" },
-    { src: "images/merc.jpg", alt: "holowanie" },
-    { src: "images/transport.jpg", alt: "laweta żywiec" },
-    { src: "images/laweta.jpg", alt: "laweta" },
-    { src: "images/IMG20220921133113_40.jpg", alt: "laweta" },
-    { src: "images/IMG20220922120033_1_40.jpg", alt: "laweta" },
-    { src: "images/IMG20221012164003_20.jpg", alt: "laweta" },
-    { src: "images/IMG20221012164547_20.jpg", alt: "laweta" },
-  ];
 
   return (
     <motion.div
@@ -28,9 +16,10 @@ const Gallery = () => {
       style={{
         background: 'url("/images/wickedbackground.svg") no-repeat center',
         backgroundSize: "cover",
+        scrollSnapType: "y mendatory",
       }}
     >
-      <Container id="gallery">
+      <Container id="gallery" css={{ scrollSnapAlign: "center" }}>
         <Grid.Container justify="space-around" gap={2}>
           <Grid xs={12} justify="center">
             <Text
@@ -45,7 +34,7 @@ const Gallery = () => {
               Galeria
             </Text>
           </Grid>
-          {imageGallery.map((image, id) => (
+          {data.map((image, id) => (
             <Grid
               xs={12}
               sm={4}
@@ -76,21 +65,15 @@ const Gallery = () => {
 
       {isOpen && (
         <Lightbox
-          mainSrc={imageGallery[photoIndex].src}
-          nextSrc={imageGallery[(photoIndex + 1) % imageGallery.length].src}
-          prevSrc={
-            imageGallery[
-              (photoIndex + imageGallery.length - 1) % imageGallery.length
-            ].src
-          }
+          mainSrc={data[photoIndex].src}
+          nextSrc={data[(photoIndex + 1) % data.length].src}
+          prevSrc={data[(photoIndex + data.length - 1) % data.length].src}
           onCloseRequest={() => setIsOpen(false)}
           onMovePrevRequest={() =>
-            setPhotoIndex(
-              (photoIndex + imageGallery.length - 1) % imageGallery.length
-            )
+            setPhotoIndex((photoIndex + data.length - 1) % data.length)
           }
           onMoveNextRequest={() =>
-            setPhotoIndex((photoIndex + 1) % imageGallery.length)
+            setPhotoIndex((photoIndex + 1) % data.length)
           }
         />
       )}
