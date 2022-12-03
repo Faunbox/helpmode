@@ -1,4 +1,12 @@
-import { Col, Container, Grid, Image, Link, Text } from "@nextui-org/react";
+import {
+  Col,
+  Container,
+  Grid,
+  Image,
+  Link,
+  Row,
+  Text,
+} from "@nextui-org/react";
 import { motion } from "framer-motion";
 
 const DesktopNavbar = ({ menu }) => {
@@ -41,29 +49,37 @@ const DesktopNavbar = ({ menu }) => {
                   </Text>
                 </Link>
               ))}
-              
             </Grid>
             <Grid xs={3} sm={6} justify="flex-end">
               <Link href="tel:501509756">
-                <Col>
-                  <Text h4 color="#F5A524">
-                    Telefon czynny 24/7:
-                  </Text>
-                  <motion.div
-                    initial={{ scale: 0.95 }}
-                    animate={{ scale: [1, 1.1] }}
-                    exit={{ scale: 0.95 }}
-                    transition={{
-                      duration: 0.8,
-                      yoyo: Infinity,
-                      ease: "easeOut",
-                    }}
-                  >
+                <Image
+                  src="images/phone.svg"
+                  width={70}
+                  height={70}
+                  css={{ paddingRight: "15px" }}
+                />
+                <Row>
+                  <Col>
                     <Text h4 color="#F5A524">
-                      501-509-756
+                      Telefon czynny 24/7:
                     </Text>
-                  </motion.div>
-                </Col>
+
+                    <motion.div
+                      initial={{ scale: 0.95 }}
+                      animate={{ scale: [1, 1.1] }}
+                      exit={{ scale: 0.95 }}
+                      transition={{
+                        duration: 0.8,
+                        yoyo: Infinity,
+                        ease: "easeOut",
+                      }}
+                    >
+                      <Text h4 color="#F5A524">
+                        501-509-756
+                      </Text>
+                    </motion.div>
+                  </Col>
+                </Row>
               </Link>
             </Grid>
           </Grid>

@@ -1,9 +1,9 @@
 {
   "nav": [
-    { "navLinkId": "Laweta", "scrollToId": "#hero" },
-    { "navLinkId": "Usługi", "scrollToId": "#offert" },
-    { "navLinkId": "Galeria", "scrollToId": "#gallery" },
-    { "navLinkId": "Kontakt", "scrollToId": "#contact" }
+    { "navLinkId": "Laweta", "scrollToId": "#hero", "href": "#" },
+    { "navLinkId": "Usługi", "scrollToId": "#offert", "href": "#oferta" },
+    { "navLinkId": "Galeria", "scrollToId": "#gallery", "href": "#galeria" },
+    { "navLinkId": "Kontakt", "scrollToId": "#contact", "href": "#kontakt" }
   ],
   "images": [
     { "src": "images/pomoc.jpeg", "alt": "pomoc drogowa" },
@@ -14,6 +14,7 @@
     { "src": "images/IMG20220921133113_40.jpg", "alt": "laweta" },
     { "src": "images/IMG20220922120033_1_40.jpg", "alt": "laweta" },
     { "src": "images/IMG20221012164003_20.jpg", "alt": "laweta" },
-    { "src": "images/IMG20221012164547_20.jpg", "alt": "laweta" }
+    { "src": "images/IMG20221012164547_20.jpg", "alt": "laweta" },
+    { "src": "images/IMG20221127004456_50.50jpg-min.jpg", "alt": "laweta" }
   ]
 }

@@ -12,7 +12,7 @@ nav.navbar-mobile {
   display: "none";
 }
 
-@media (max-width: 640px) {
+@media (max-width: 960px) {
   .navbar {
     display: none;
   }
@@ -21,7 +21,7 @@ nav.navbar-mobile {
     display: block;
   }
 }
-@media (min-width: 640px) {
+@media (min-width: 960px) {
   .navbar {
     display: block;
   }
