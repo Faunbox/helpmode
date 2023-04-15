@@ -53,6 +53,7 @@ const DesktopNavbar = ({ menu }) => {
             <Grid xs={3} sm={6} justify="flex-end">
               <Link href="tel:501509756">
                 <Image
+                alt="Phone icon"
                   src="images/phone.svg"
                   width={70}
                   height={70}
@@ -70,8 +71,8 @@ const DesktopNavbar = ({ menu }) => {
                       exit={{ scale: 0.95 }}
                       transition={{
                         duration: 0.8,
-                        yoyo: Infinity,
-                        ease: "easeOut",
+                        repeat: Infinity,
+                        repeatType: "reverse",
                       }}
                     >
                       <Text h4 color="#F5A524">

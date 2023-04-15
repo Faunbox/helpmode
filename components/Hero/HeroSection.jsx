@@ -59,7 +59,7 @@ const Hero = () => {
                     }}
                     animate={{ y: ["20%", "-20%"] }}
                   >
-                    <Button color={"#845306"}>
+                    <Button color={"error"}>
                       <Link css={{ color: "black" }} href="tel:501509756">
                         Wezwij pomoc
                       </Link>

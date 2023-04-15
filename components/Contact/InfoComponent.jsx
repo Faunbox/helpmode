@@ -45,7 +45,7 @@ const ContactInfoComponent = () => {
             css={{ paddingRight: "10px" }}
           />
           <Text b size={"large"}>
-            Whatsapp: 501 509 767
+            Whatsapp: 501 509 756
           </Text>
         </Link>
         <Link href={"mailto:kontakt@zywiec-laweta.pl"}>
