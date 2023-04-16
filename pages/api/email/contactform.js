@@ -3,8 +3,7 @@ const nodemailer = require("nodemailer");
 export default function handler(req, res) {
   const message = {
     from: req.body.email,
-    // to: "kontakt@zywiec-laweta.pl",
-    to: "faunbox2@gmail.com",
+    to: process.env.EMAIL_TO,
     subject: "Wiadomość z formularza kontaktowego",
     text: req.body.message,
     html: `
@@ -30,7 +29,6 @@ export default function handler(req, res) {
           error: `Coś poszło nie tak! Spróbuj ponownie lub napisz wiadomość na kontakt@zywiec-laweta.pl`,
         });
       } else {
-        console.log(info);
         res.status(250).json({
           success: `Wiadomość dostarczona!`,
         });

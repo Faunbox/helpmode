@@ -1,6 +1,5 @@
-import { Container, Grid, Text } from "@nextui-org/react";
+import { Container, Grid, Image, Text } from "@nextui-org/react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useState } from "react";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
@@ -53,9 +52,10 @@ const Gallery = ({ data }) => {
                   showSkeleton
                   src={image.src}
                   alt={image.alt}
+                  objectFit="cover"
                   width={300}
                   height={300}
-                  style={{ borderRadius: "20px", objectFit: "cover" }}
+                  css={{ borderRadius: "20px" }}
                 />
               </motion.div>
             </Grid>

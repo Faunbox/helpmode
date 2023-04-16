@@ -4,21 +4,16 @@ import {
   Checkbox,
   Grid,
   Input,
-  Spacer,
-  Textarea,
   Popover,
+  Spacer,
   Text,
+  Textarea,
 } from "@nextui-org/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
 const ContactFormComponent = () => {
   const [emailAccept, setEmailAccept] = useState(false);
-  const [emailDelivered, setEmailDelivered] = useState(false);
-
-  useEffect(() => {
-    setTimeout((setEmailDelivered(false), setEmailAccept(false)), 5000);
-  }, [emailDelivered]);
 
   const [emailContent, setEmailContent] = useState({
     name: "",
@@ -36,10 +31,7 @@ const ContactFormComponent = () => {
   };
 
   const contactFormEmailToOwner = async () => {
-    setEmailContent((prevState) => ({
-      ...prevState,
-      isSend: true,
-    }));
+   
     await axios({
       method: "POST",
       url: "/api/email/contactform",
@@ -49,7 +41,9 @@ const ContactFormComponent = () => {
         message: emailContent.message,
       },
     })
-      .then((response) => response.status === 250 && setEmailDelivered(true))
+      .then(
+        (response) => response.status === 250 && alert(response.data.success)
+      )
       .catch(
         (err) => alert(err.error),
         setEmailContent((prevState) => ({
@@ -65,7 +59,14 @@ const ContactFormComponent = () => {
     if (emailContent.honey) return;
 
     //email send function
-    contactFormEmailToOwner(emailContent);
+    setEmailContent((prevState) => ({
+      ...prevState,
+      isSend: true,
+    }));
+    await contactFormEmailToOwner(emailContent);
+    setTimeout(() => {
+      setEmailAccept(false);
+    }, 3000);
   };
 
   return (
@@ -113,6 +114,7 @@ const ContactFormComponent = () => {
                 defaultSelected={false}
                 isRequired={true}
                 onChange={() => setEmailAccept(!emailAccept)}
+                isDisabled={!emailContent.isSend ? false : true}
               >
                 Wyrażam zgodę na przetwarzanie podanych w formularzu kontaktowym
                 danych w celu nawiązania kontaktu, odpowiedzi na zadane pytania
@@ -134,21 +136,21 @@ const ContactFormComponent = () => {
               ></Checkbox>
             </Card.Body>
             <Card.Footer>
-              {emailAccept ? (
-                <Button color={"warning"} type="submit">
-                  Wyslij wiadomosc
-                </Button>
-              ) : (
+              {emailAccept && !emailContent.isSend ? (
                 <Popover placement="top">
                   <Popover.Trigger>
-                    <Button color={"warning"} type="submit" disabled>
+                    <Button color={"warning"} type="submit">
                       {emailContent.isSend ? "Wysłano" : "Wyslij wiadomosc"}
                     </Button>
                   </Popover.Trigger>
-                  <Popover.Content css={{ background: "#a2c11c" }}>
-                    <Text css={{ p: "$10" }}>Wiadomość wysłana!</Text>
+                  <Popover.Content css={{ backgroundColor: "$green500" }}>
+                    <Text css={{ p: "$8" }}>Wiadomość wysłana</Text>
                   </Popover.Content>
                 </Popover>
+              ) : (
+                <Button color={"warning"} type="submit" disabled>
+                  Wyslij wiadomosc
+                </Button>
               )}
             </Card.Footer>
           </form>

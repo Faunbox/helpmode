@@ -1,6 +1,5 @@
-import { Button, Container, Grid,  Link, Text } from "@nextui-org/react";
+import { Button, Container, Grid, Image, Link, Text } from "@nextui-org/react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 const Hero = () => {
   return (
@@ -24,12 +23,12 @@ const Hero = () => {
           <Grid xs={0} sm={6}>
             <Image
               showSkeleton
-              src="/images/hero2.jpg"
-              alt="pomoc drogowa"
+              src="/images/hero.jpg"
+              alt="laweta"
+              objectFit="cover"
               height={600}
-              width={600}
               className="hero-image"
-              style={{ borderRadius: "50px", objectFit:"cover" }}
+              css={{ borderRadius: "50px" }}
             />
           </Grid>
           <Grid xs={12} sm={6} direction={"column"}>
@@ -60,7 +59,7 @@ const Hero = () => {
                     }}
                     animate={{ y: ["20%", "-20%"] }}
                   >
-                    <Button color={"error"} ghost>
+                    <Button color={"#845306"}>
                       <Link css={{ color: "black" }} href="tel:501509756">
                         Wezwij pomoc
                       </Link>
