@@ -37,9 +37,15 @@ const Gallery = ({ data }) => {
           </Grid>
           <Container
             display="flex"
-            wrap="wrap"
-            direction="column"
-            css={{ overflow: "auto", maxHeight: "100vh" }}
+            css={{
+              "@xsMax": {
+                overflow: "auto",
+                maxHeight: "100vh",
+                flexDirection: "column",
+                flexWrap: "wrap",
+                overflow: "auto",
+              },
+            }}
           >
             {data.map((image, id) => (
               <Grid
