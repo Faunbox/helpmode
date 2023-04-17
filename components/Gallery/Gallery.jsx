@@ -35,31 +35,38 @@ const Gallery = ({ data }) => {
               Galeria
             </Text>
           </Grid>
-          {data.map((image, id) => (
-            <Grid
-              xs={12}
-              sm={4}
-              md={3}
-              justify="center"
-              onClick={() => {
-                setIsOpen(true);
-                setPhotoIndex(id);
-              }}
-              css={{ cursor: "pointer" }}
-              key={id}
-            >
-              <motion.div whileHover={{ scale: 1.05 }}>
-                <Image
-                  showSkeleton
-                  src={image.src}
-                  alt={image.alt}
-                  width={300}
-                  height={300}
-                  style={{ borderRadius: "20px", objectFit: "cover" }}
-                />
-              </motion.div>
-            </Grid>
-          ))}
+          <Container
+            display="flex"
+            wrap="wrap"
+            direction="column"
+            css={{ overflow: "auto", maxHeight: "100vh" }}
+          >
+            {data.map((image, id) => (
+              <Grid
+                xs={12}
+                sm={4}
+                md={3}
+                justify="center"
+                onClick={() => {
+                  setIsOpen(true);
+                  setPhotoIndex(id);
+                }}
+                css={{ cursor: "pointer" }}
+                key={id}
+              >
+                <motion.div whileHover={{ scale: 1.05 }}>
+                  <Image
+                    showSkeleton
+                    src={image.src}
+                    alt={image.alt}
+                    width={300}
+                    height={300}
+                    style={{ borderRadius: "20px", objectFit: "cover" }}
+                  />
+                </motion.div>
+              </Grid>
+            ))}
+          </Container>
         </Grid.Container>
       </Container>
 
