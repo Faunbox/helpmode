@@ -31,7 +31,6 @@ const ContactFormComponent = () => {
   };
 
   const contactFormEmailToOwner = async () => {
-   
     await axios({
       method: "POST",
       url: "/api/email/contactform",
@@ -75,6 +74,7 @@ const ContactFormComponent = () => {
         <Card variant="bordered">
           <form
             name="sentMessage"
+            aria-label="contact form"
             validate="true"
             method="POST"
             onSubmit={handleSubmit}

@@ -62,12 +62,16 @@ const Gallery = ({ data }) => {
               >
                 <motion.div whileHover={{ scale: 1.05 }}>
                   <Image
-                    showSkeleton
                     src={image.src}
                     alt={image.alt}
                     width={300}
                     height={300}
-                    style={{ borderRadius: "20px", objectFit: "cover" }}
+                    style={{
+                      borderRadius: "20px",
+                      objectFit: "cover",
+                      width: "300px",
+                      height: "300px",
+                    }}
                   />
                 </motion.div>
               </Grid>

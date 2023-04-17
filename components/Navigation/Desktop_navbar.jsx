@@ -33,8 +33,8 @@ const DesktopNavbar = ({ menu }) => {
                 src="/images/logo.png"
                 alt="laweta żywiec"
                 objectFit="cover"
-                height={80}
-                width={80}
+                height={70}
+                width={70}
               />
               {/* <Text h1 color="yellow">
                 Help<span style={{ color: "white" }}>Mode</span>

@@ -1,11 +1,4 @@
-import {
-  Container,
-  Grid,
-  Image,
-  Link,
-  Spacer,
-  Text,
-} from "@nextui-org/react";
+import { Container, Grid, Image, Link, Spacer, Text } from "@nextui-org/react";
 import GoogleMapsComponent from "./GoogleMaps";
 import PrivacyPolicyModal from "./PrivactPoliticsModal";
 
@@ -53,11 +46,26 @@ const Footer = () => {
               <Link href="mailto:kontakt@zywiec-laweta.pl">
                 <Text color="white">e-mail: kontakt@zywiec-laweta.pl</Text>
               </Link>
-              <Spacer y={1} />
-              <PrivacyPolicyModal />
+              {/* <Spacer y={1} /> */}
             </Container>
+            {/* Oferteo */}
+            <Link
+              href="https://www.oferteo.pl/help-mode-autoholowanie-lukasz-borak/firma/5673386"
+              target="blank"
+            >
+              <Image
+                src="https://www.oferteo.pl/images/buttons/ps_brown_big.png?customerId=5673386"
+                border="0"
+                showSkeleton
+                alt="Help Mode-autoholowanie Lukasz Borak - Profesjonalny Sprzedawca Oferteo.pl"
+                title="Help Mode-autoholowanie Lukasz Borak - Profesjonalny Sprzedawca Oferteo.pl"
+              />
+            </Link>
           </Grid>
-          <Spacer y={1} />
+          <Grid xs={12} justify="center" css={{ textAlign: "center" }}>
+            <Spacer y={2} />
+            <PrivacyPolicyModal />
+          </Grid>
           <Grid xs={12} justify="center" css={{ py: 15 }}>
             <Text small color="white">
               Created by Filip Sojecki
