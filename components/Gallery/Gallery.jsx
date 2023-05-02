@@ -1,13 +1,22 @@
 import { Container, Grid, Text } from "@nextui-org/react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useState } from "react";
-import Lightbox from "react-image-lightbox";
-import "react-image-lightbox/style.css";
+import FsLightbox from "fslightbox-react";
+import Image from "next/image";
 
 const Gallery = ({ data }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [photoIndex, setPhotoIndex] = useState(0);
+  const [lightboxController, setLightboxController] = useState({
+    toggler: false,
+    slide: 1,
+  });
+  function openLightboxOnSlide(number) {
+    setLightboxController({
+      toggler: !lightboxController.toggler,
+      slide: number + 1,
+    });
+  }
+
+  const images = data.map((image) => image.src);
 
   return (
     <motion.div
@@ -53,10 +62,7 @@ const Gallery = ({ data }) => {
                 sm={4}
                 md={3}
                 justify="center"
-                onClick={() => {
-                  setIsOpen(true);
-                  setPhotoIndex(id);
-                }}
+                onClick={() => openLightboxOnSlide(id)}
                 css={{ cursor: "pointer" }}
                 key={id}
               >
@@ -66,6 +72,8 @@ const Gallery = ({ data }) => {
                     alt={image.alt}
                     width={300}
                     height={300}
+                    loading="lazy"
+                    
                     style={{
                       borderRadius: "20px",
                       objectFit: "cover",
@@ -80,20 +88,11 @@ const Gallery = ({ data }) => {
         </Grid.Container>
       </Container>
 
-      {isOpen && (
-        <Lightbox
-          mainSrc={data[photoIndex].src}
-          nextSrc={data[(photoIndex + 1) % data.length].src}
-          prevSrc={data[(photoIndex + data.length - 1) % data.length].src}
-          onCloseRequest={() => setIsOpen(false)}
-          onMovePrevRequest={() =>
-            setPhotoIndex((photoIndex + data.length - 1) % data.length)
-          }
-          onMoveNextRequest={() =>
-            setPhotoIndex((photoIndex + 1) % data.length)
-          }
-        />
-      )}
+      <FsLightbox
+        toggler={lightboxController.toggler}
+        sources={images}
+        slide={lightboxController.slide}
+      />
     </motion.div>
   );
 };
