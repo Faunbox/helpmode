@@ -11,6 +11,7 @@ import CookieConsent from "react-cookie-consent";
 import LoadingComponent from "../components/Others/Progress";
 import Cookies from "../components/Others/Coockies";
 import JsonData from "../data/data.json";
+import Head from "next/head";
 
 // export const scroll = new SmoothScroll('a[href*="#"]', {
 //   speed: 1200,
@@ -18,16 +19,29 @@ import JsonData from "../data/data.json";
 //   speedAsDuration: true,
 // });
 
-function App({data}) {
+function App({ data }) {
   const Gallery = lazy(() => import("../components/Gallery/Gallery"));
   const Offert = lazy(() => import("../components/Offert/Offert"));
   const Contact = lazy(() => import("../components/Contact/Contact"));
   // const app = initializeApp(firebaseConfig);
   // getAnalytics(app);
 
-
   return (
     <>
+      <Head>
+        <link rel="canonical" href="https://zywiec-laweta.pl" />
+        <meta
+          name="description"
+          content="Pomoc drogowa 24/7| Laweta | Holowanie | Wypożyczalnia przyczep"
+        />
+        <meta
+          name="keywords"
+          content="laweta zywiec, laweta żywiec, holowanie żywiec, laweta bielsko, wypożyczalnia przyczep żywiec, pomoc drogowa zywiec, pomoc drogowa żywiec"
+        />
+
+        <meta name="author" content="Filip Sojecki" />
+        <title>Pomoc drogowa 24/7 Żywiec</title>
+      </Head>
       <CookieConsent
         location="bottom"
         cookieName="ciasteczka"
