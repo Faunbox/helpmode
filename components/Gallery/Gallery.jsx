@@ -52,7 +52,7 @@ const Gallery = ({ data }) => {
                 maxHeight: "100vh",
                 flexDirection: "column",
                 flexWrap: "wrap",
-                overflow: "auto",
+                height: "fit-content",
               },
             }}
           >
@@ -73,7 +73,6 @@ const Gallery = ({ data }) => {
                     width={300}
                     height={300}
                     loading="lazy"
-                    
                     style={{
                       borderRadius: "20px",
                       objectFit: "cover",

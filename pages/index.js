@@ -1,8 +1,8 @@
 import { Spacer } from "@nextui-org/react";
-import { lazy, Suspense, useEffect, useState } from "react";
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { firebaseConfig } from "../firebase/firebase";
+import { lazy, Suspense } from "react";
+// import { initializeApp } from "firebase/app";
+// import { getAnalytics } from "firebase/analytics";
+// import { firebaseConfig } from "../firebase/firebase";
 // import SmoothScroll from "smooth-scroll";
 import Footer from "../components/Footer/Footer";
 import Hero from "../components/Hero/HeroSection";

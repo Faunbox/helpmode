@@ -1,3 +1,9 @@
-# https://www.robotstxt.org/robotstxt.html
+# *
 User-agent: *
-Disallow:
+Allow: /
+
+# Host
+Host: https://www.zywiec-laweta.pl/
+
+# Sitemaps
+Sitemap: https://www.zywiec-laweta.pl/sitemap.xml

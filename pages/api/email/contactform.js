@@ -8,7 +8,8 @@ export default function handler(req, res) {
     text: req.body.message,
     html: `
     <h1>Wiadomość od ${req.body.name}</h1>
-    <p>${req.body.message}</p>
+    <p>Email osoby piszącej: <a href='mailto:${req.body.email}'>${req.body.email}</a></p>
+    <p>Wiadomość: ${req.body.message}</p>
     `,
   };
 
@@ -22,7 +23,6 @@ export default function handler(req, res) {
   });
 
   if (req.method === "POST") {
-    console.log("im in");
     transporter.sendMail(message, (err, info) => {
       if (err) {
         res.status(404).json({

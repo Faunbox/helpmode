@@ -4,13 +4,14 @@ import {
   Checkbox,
   Grid,
   Input,
+  Loading,
   Popover,
   Spacer,
   Text,
   Textarea,
 } from "@nextui-org/react";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const ContactFormComponent = () => {
   const [emailAccept, setEmailAccept] = useState(false);
@@ -21,6 +22,8 @@ const ContactFormComponent = () => {
     message: "",
     honey: false,
     isSend: false,
+    isOk: "",
+    isError: "",
   });
 
   const handleOnChange = (e) => {
@@ -33,7 +36,7 @@ const ContactFormComponent = () => {
   const contactFormEmailToOwner = async () => {
     await axios({
       method: "POST",
-      url: "/api/email/contactform",
+      url: "/api/email/contactform ",
       data: {
         name: emailContent.name,
         email: emailContent.email,
@@ -41,13 +44,21 @@ const ContactFormComponent = () => {
       },
     })
       .then(
-        (response) => response.status === 250 && alert(response.data.success)
+        (response) =>
+          response.status === 250 &&
+          setEmailContent((prevState) => ({
+            ...prevState,
+            isOk: true,
+            // isSend: true,
+            isError: false,
+          }))
       )
       .catch(
-        (err) => alert(err.error),
         setEmailContent((prevState) => ({
           ...prevState,
-          isSend: false,
+          // isSend: true,
+          isOk: true,
+          isError: true,
         }))
       );
   };
@@ -57,15 +68,18 @@ const ContactFormComponent = () => {
     //Spambot check
     if (emailContent.honey) return;
 
-    //email send function
     setEmailContent((prevState) => ({
       ...prevState,
       isSend: true,
     }));
-    await contactFormEmailToOwner(emailContent);
+
     setTimeout(() => {
       setEmailAccept(false);
-    }, 3000);
+    }, 500);
+
+    //email send function
+
+    await contactFormEmailToOwner(emailContent);
   };
 
   return (
@@ -136,22 +150,30 @@ const ContactFormComponent = () => {
               ></Checkbox>
             </Card.Body>
             <Card.Footer>
-              {emailAccept && !emailContent.isSend ? (
-                <Popover placement="top">
-                  <Popover.Trigger>
-                    <Button color={"warning"} type="submit">
-                      {emailContent.isSend ? "Wysłano" : "Wyslij wiadomosc"}
-                    </Button>
-                  </Popover.Trigger>
-                  <Popover.Content css={{ backgroundColor: "$green500" }}>
+              <Popover placement="top" isOpen={emailContent.isOk}>
+                <Popover.Trigger>
+                  <Button
+                    color={"warning"}
+                    type="submit"
+                    disabled={!emailAccept}
+                  >
+                    Wyślij wiadomość
+                  </Button>
+                </Popover.Trigger>
+                <Popover.Content
+                  css={
+                    !emailContent.isError
+                      ? { backgroundColor: "$green500" }
+                      : { backgroundColor: "$yellow600" }
+                  }
+                >
+                  {!emailContent.isError ? (
                     <Text css={{ p: "$8" }}>Wiadomość wysłana</Text>
-                  </Popover.Content>
-                </Popover>
-              ) : (
-                <Button color={"warning"} type="submit" disabled>
-                  Wyslij wiadomosc
-                </Button>
-              )}
+                  ) : (
+                    <Loading css={{ p: "$8" }}>Wysyłanie</Loading>
+                  )}
+                </Popover.Content>
+              </Popover>
             </Card.Footer>
           </form>
         </Card>

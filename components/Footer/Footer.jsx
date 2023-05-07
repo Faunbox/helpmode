@@ -1,8 +1,10 @@
 import { Container, Grid, Image, Link, Spacer, Text } from "@nextui-org/react";
-import GoogleMapsComponent from "./GoogleMaps";
 import PrivacyPolicyModal from "./PrivactPoliticsModal";
+import dynamic from "next/dynamic";
 
 const Footer = () => {
+  const GoogleMapsComponent = dynamic(() => import("./GoogleMaps"));
+
   return (
     <footer
       style={{
@@ -19,6 +21,8 @@ const Footer = () => {
           <Grid
             xs={12}
             direction="column"
+            justify="center"
+            alignItems="center"
             css={{ "@xs": { flexDirection: "row" } }}
           >
             <Image
@@ -46,7 +50,6 @@ const Footer = () => {
               <Link href="mailto:kontakt@zywiec-laweta.pl">
                 <Text color="white">e-mail: kontakt@zywiec-laweta.pl</Text>
               </Link>
-              {/* <Spacer y={1} /> */}
             </Container>
             {/* Oferteo */}
             <Link
