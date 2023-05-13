@@ -1,13 +1,17 @@
-import { NextUIProvider } from "@nextui-org/react";
+import { NextUIProvider, useSSR } from "@nextui-org/react";
 
 import "../styles/App.css";
 import "../styles/index.css";
 
 function MyApp({ Component, pageProps }) {
+  const { isBrowser } = useSSR();
+
   return (
-    <NextUIProvider>
-      <Component {...pageProps} />
-    </NextUIProvider>
+    isBrowser && (
+      <NextUIProvider>
+        <Component {...pageProps} />
+      </NextUIProvider>
+    )
   );
 }
 

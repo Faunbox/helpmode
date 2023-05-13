@@ -50,7 +50,12 @@ const MobileNavbar = ({ menu }) => {
                 }}
               >
                 <Col>
-                  <Image src="images/phone.svg" width={50} height={50} />
+                  <Image
+                    src="images/phone.svg"
+                    width={50}
+                    height={50}
+                    alt="phone image svg"
+                  />
                   <Text b color={"white"}>
                     501-509-756
                   </Text>
@@ -60,7 +65,9 @@ const MobileNavbar = ({ menu }) => {
           </Grid>
           <Grid xs={4} justify={"flex-end"} alignItems="center">
             <Dropdown>
-              <Dropdown.Button color={"warning"}> </Dropdown.Button>
+              <Dropdown.Button color={"warning"} aria-label="menu button">
+                {" "}
+              </Dropdown.Button>
               <Dropdown.Menu>
                 {menu?.map((nav) => (
                   <Dropdown.Item key={nav.scrollToId}>

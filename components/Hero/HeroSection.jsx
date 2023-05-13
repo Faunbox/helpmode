@@ -1,4 +1,4 @@
-import { Button, Container, Grid,  Link, Text } from "@nextui-org/react";
+import { Button, Container, Grid, Link, Text } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -21,22 +21,32 @@ const Hero = () => {
         id="hero"
       >
         <Grid.Container gap={2} direction="row">
-          <Grid xs={0} sm={6}>
+          <Grid xs={0} sm={6} role="section">
             <Image
-              showSkeleton
-              src="/images/hero2.jpg"
+              src="/images/hero2.webp"
               alt="pomoc drogowa"
               height={600}
               width={600}
               className="hero-image"
-              style={{ borderRadius: "50px", objectFit:"cover" }}
+              style={{ borderRadius: "50px", objectFit: "cover" }}
             />
           </Grid>
-          <Grid xs={12} sm={6} direction={"column"}>
+          <Grid
+            xs={12}
+            sm={6}
+            direction={"column"}
+            role="section"
+            aria-roledescription="article"
+          >
             <Grid xs={12} alignItems={"center"} justify={"center"}>
               <Text h1>Potrzebujesz pomocy drogowej ?</Text>
             </Grid>
-            <Grid xs={12} alignItems={"center"} justify={"center"}>
+            <Grid
+              xs={12}
+              alignItems={"center"}
+              justify={"center"}
+              role="section"
+            >
               <Text size="$2xl">
                 Firma Helpmode świadczy profesjonalne usługi związane z{" "}
                 <Text b>
@@ -48,7 +58,13 @@ const Hero = () => {
                 możemy Ci pomóc!
               </Text>
             </Grid>
-            <Grid xs={12} alignItems={"center"} justify="center">
+            <Grid
+              xs={12}
+              alignItems={"center"}
+              justify="center"
+              role="section"
+              aria-roledescription="button"
+            >
               <Grid.Container justify="center" alignItems="center" gap={2}>
                 <Grid xs={12} sm={6} justify={"center"}>
                   <motion.div
@@ -67,9 +83,20 @@ const Hero = () => {
                     </Button>
                   </motion.div>
                 </Grid>
-                <Grid xs={12} sm={6} justify={"center"}>
+                <Grid
+                  xs={12}
+                  sm={6}
+                  justify={"center"}
+                  role="section"
+                  aria-roledescription="button"
+                >
                   <Link data-scroll href="#contact" css={{ color: "black" }}>
-                    <Button color={"#845306"}>Wypozyczenie przyczepy</Button>
+                    <Button
+                      aria-roledescription="button to contact form"
+                      color={"#845306"}
+                    >
+                      Wypozyczenie przyczepy
+                    </Button>
                   </Link>
                 </Grid>
               </Grid.Container>

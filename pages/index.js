@@ -1,10 +1,5 @@
 import { Spacer } from "@nextui-org/react";
-import { lazy, Suspense } from "react";
-// import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
-// import { firebaseConfig } from "../firebase/firebase";
-// import SmoothScroll from "smooth-scroll";
-import Footer from "../components/Footer/Footer";
+import { Suspense } from "react";
 import Hero from "../components/Hero/HeroSection";
 import Navigation from "../components/Navigation/Navigation";
 import CookieConsent from "react-cookie-consent";
@@ -12,17 +7,13 @@ import LoadingComponent from "../components/Others/Progress";
 import Cookies from "../components/Others/Coockies";
 import JsonData from "../data/data.json";
 import Head from "next/head";
-
-// export const scroll = new SmoothScroll('a[href*="#"]', {
-//   speed: 1200,
-//   header: "[data-scroll-header]",
-//   speedAsDuration: true,
-// });
+import dynamic from "next/dynamic";
 
 function App({ data }) {
-  const Gallery = lazy(() => import("../components/Gallery/Gallery"));
-  const Offert = lazy(() => import("../components/Offert/Offert"));
-  const Contact = lazy(() => import("../components/Contact/Contact"));
+  const Gallery = dynamic(() => import("../components/Gallery/Gallery"));
+  const Offert = dynamic(() => import("../components/Offert/Offert"));
+  const Contact = dynamic(() => import("../components/Contact/Contact"));
+  const Footer = dynamic(() => import("../components/Footer/Footer"));
   // const app = initializeApp(firebaseConfig);
   // getAnalytics(app);
 

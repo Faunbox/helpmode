@@ -139,6 +139,7 @@ const ContactFormComponent = () => {
               <Checkbox
                 defaultSelected={false}
                 isRequired={false}
+                aria-label="spambot check"
                 name="_honey"
                 css={{ display: "none" }}
                 onChange={() =>

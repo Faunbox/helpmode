@@ -73,11 +73,13 @@ const Gallery = ({ data }) => {
                     width={300}
                     height={300}
                     loading="lazy"
+                    
+                    blurDataURL="/images/logo.png"
                     style={{
                       borderRadius: "20px",
                       objectFit: "cover",
-                      width: "300px",
-                      height: "300px",
+                      width: "auto",
+                      height: "auto",
                     }}
                   />
                 </motion.div>
