@@ -5,11 +5,12 @@ import {
   Button,
   Text,
   Link,
+  Col,
+  Spacer,
 } from "@nextui-org/react";
 import { motion } from "framer-motion";
 
 const Offert = () => {
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -36,11 +37,7 @@ const Offert = () => {
         </Text>
         <Grid.Container gap={2} justify={"center"}>
           <Grid xs={12} sm={6} md={4} lg={3} justify="center">
-            <Card
-              css={{ mw: "330px" }}
-              isHoverable
-              isPressable
-            >
+            <Card css={{ mw: "330px" }} isHoverable isPressable>
               <Card.Header>
                 <Text h1 size={"$lg"}>
                   Pomoc drogowa
@@ -91,11 +88,7 @@ const Offert = () => {
             </Card>
           </Grid>
           <Grid xs={12} sm={6} md={4} lg={3} justify="center">
-            <Card
-              css={{ mw: "330px" }}
-              isHoverable
-              isPressable
-            >
+            <Card css={{ mw: "330px" }} isHoverable isPressable>
               <Card.Header>
                 <Text h1 size={"$lg"}>
                   Przewóz osób
@@ -118,24 +111,35 @@ const Offert = () => {
             </Card>
           </Grid>
           <Grid xs={12} sm={6} md={4} lg={3} justify="center">
-            <Card
-              css={{ mw: "330px" }}
-              isHoverable
-              isPressable
-            >
+            <Card css={{ mw: "330px" }} isHoverable isPressable>
               <Card.Header>
                 <Text h1 size={"$lg"}>
-                  Wypożyczalnia przyczep
+                  Quad na wynajem
                 </Text>
               </Card.Header>
               <Card.Divider />
-              <Card.Body css={{ py: "$10" }}>
+              <Card.Body css={{ py: "$10", justifyContent: "space-between" }}>
                 <Text>
-                  W naszej ofercie można skorzystać również z wypożyczalni
-                  przyczep do 750kg DMC. Staramy się dostosować termin do
-                  wymagań klienta. W celu wyceny zapraszamy do kontaktu
-                  telefonicznego lub poprzez formularz kontaktowy.
+                  Oferujwmy wynajem quada, idealnego dla wszystkich miłośników
+                  przygody i adrenaliny! Jeśli marzysz o wyprawie w góry,
+                  przejażdżce po lesie lub zwiedzaniu pięknych miejsc wokół to
+                  quad będzie dla Ciebie idealny.{" "}
+                  <Text b>
+                    Przy najmie na dobę - gratis, w innym przypadku 3zł/km
+                  </Text>
                 </Text>
+                <Container
+                  direction="column"
+                  gap={2}
+                  justify="center"
+                  alignItems="center"
+                >
+                  <Text small>
+                    QuadCf moto 520, wyciągarka, skrzynia automatyczna
+                  </Text>
+                  <Spacer y={0.1} />
+                  <Text small>Doba: 500zł | 8h: 400zł | 1h: 150zł</Text>
+                </Container>
               </Card.Body>
               <Card.Divider />
               <Card.Footer>

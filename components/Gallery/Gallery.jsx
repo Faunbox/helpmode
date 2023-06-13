@@ -72,8 +72,7 @@ const Gallery = ({ data }) => {
                     alt={image.alt}
                     width={300}
                     height={300}
-                    loading="lazy"
-                    
+                    loading="lazy"                    
                     blurDataURL="/images/logo.png"
                     style={{
                       borderRadius: "20px",

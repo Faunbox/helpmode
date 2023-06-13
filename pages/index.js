@@ -8,14 +8,18 @@ import Cookies from "../components/Others/Coockies";
 import JsonData from "../data/data.json";
 import Head from "next/head";
 import dynamic from "next/dynamic";
+import { firebaseConfig } from "../firebase/firebase";
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 
 function App({ data }) {
   const Gallery = dynamic(() => import("../components/Gallery/Gallery"));
   const Offert = dynamic(() => import("../components/Offert/Offert"));
   const Contact = dynamic(() => import("../components/Contact/Contact"));
   const Footer = dynamic(() => import("../components/Footer/Footer"));
-  // const app = initializeApp(firebaseConfig);
-  // getAnalytics(app);
+  const app = initializeApp(firebaseConfig);
+  getAnalytics(app);
+  console.log(getAnalytics(app));
 
   return (
     <>
