@@ -43,7 +43,12 @@ const DesktopNavbar = ({ menu }) => {
 
             <Grid xs={7} justify="space-around" alignItems="center">
               {menu?.map((nav) => (
-                <Link data-scroll href={nav.scrollToId} key={nav.navLinkId}>
+                <Link
+                  data-scroll
+                  href={nav.scrollToId}
+                  key={nav.navLinkId}
+                  scroll={false}
+                >
                   <Text color="white" h4 css={{ cursor: "pointer" }}>
                     {nav.navLinkId}
                   </Text>
@@ -53,7 +58,7 @@ const DesktopNavbar = ({ menu }) => {
             <Grid xs={3} sm={6} justify="flex-end">
               <Link href="tel:501509756">
                 <Image
-                alt="Phone icon"
+                  alt="Phone icon"
                   src="images/phone.svg"
                   width={70}
                   height={70}

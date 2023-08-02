@@ -12,7 +12,7 @@ const ContactInfoComponent = () => {
       >
         <Text h2>Masz pytania?</Text>
         <Text size={"large"}>
-          Chciałbyś dowiedzieć się więcej na temat wypożyczenia przyczepy?
+          Chciałbyś dowiedzieć się więcej na temat wypożyczenia quada?
         </Text>
         <Text size={"large"}>
           Chciałbyś zamowić lawete do przewozu swojego samochodu?

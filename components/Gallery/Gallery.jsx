@@ -47,7 +47,7 @@ const Gallery = ({ data }) => {
           <Container
             display="flex"
             css={{
-              "@xsMax": {
+              "@smMax": {
                 overflow: "auto",
                 maxHeight: "100vh",
                 flexDirection: "column",
@@ -62,6 +62,7 @@ const Gallery = ({ data }) => {
                 sm={4}
                 md={3}
                 justify="center"
+                alignContent="flex-start"
                 onClick={() => openLightboxOnSlide(id)}
                 css={{ cursor: "pointer" }}
                 key={id}
@@ -72,13 +73,13 @@ const Gallery = ({ data }) => {
                     alt={image.alt}
                     width={300}
                     height={300}
-                    loading="lazy"                    
+                    loading="lazy"
                     blurDataURL="/images/logo.png"
                     style={{
                       borderRadius: "20px",
                       objectFit: "cover",
-                      width: "auto",
-                      height: "auto",
+                      width: "300",
+                      height: "300",
                     }}
                   />
                 </motion.div>

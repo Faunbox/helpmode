@@ -125,19 +125,20 @@ const Offert = () => {
                   przejażdżce po lesie lub zwiedzaniu pięknych miejsc wokół to
                   quad będzie dla Ciebie idealny.{" "}
                   <Text b>
-                    Przy najmie na dobę - gratis, w innym przypadku 3zł/km
+                    Możliwy transport do klienta - gratis przy najmie na dobę,
+                    inaczej 3zł/km
                   </Text>
                 </Text>
                 <Container
                   direction="column"
-                  gap={2}
+                  gap={1}
                   justify="center"
                   alignItems="center"
                 >
                   <Text small>
                     QuadCf moto 520, wyciągarka, skrzynia automatyczna
                   </Text>
-                  <Spacer y={0.1} />
+                  <Spacer y={0.01} />
                   <Text small>Doba: 500zł | 8h: 400zł | 1h: 150zł</Text>
                 </Container>
               </Card.Body>

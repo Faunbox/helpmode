@@ -27,15 +27,17 @@ function App({ data }) {
         <link rel="canonical" href="https://zywiec-laweta.pl" />
         <meta
           name="description"
-          content="Pomoc drogowa 24/7| Laweta | Holowanie | Wypożyczalnia przyczep"
+          content="> 501 509 756 < | Pomoc drogowa Żywiec 24 godziny na dobę 7 dni w tygodniu. Nasz obszar działania to cała gmina Żywiec. Holowanie Żywiec, wypożyczalnia quadów, quady z dojazdem do klienta"
         />
         <meta
           name="keywords"
-          content="laweta zywiec, laweta żywiec, holowanie żywiec, laweta bielsko, wypożyczalnia przyczep żywiec, pomoc drogowa zywiec, pomoc drogowa żywiec"
+          content="laweta zywiec, laweta żywiec, holowanie żywiec, laweta Łodygowice, quad żywiec, pomoc drogowa zywiec, pomoc drogowa żywiec, najem quada żywiec, wypozyczenie quada żywiec, quad na godziny zywiec"
         />
 
         <meta name="author" content="Filip Sojecki" />
-        <title>Pomoc drogowa 24/7 Żywiec</title>
+        <title>
+          Pomoc drogowa 24/7 Żywiec i okolice | Laweta | Holowanie | Quad
+        </title>
       </Head>
       <CookieConsent
         location="bottom"
