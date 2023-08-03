@@ -12,7 +12,7 @@ const Hero = () => {
     >
       <Container
         css={{
-          minHeight: "90vh",
+          minHeight: "80vh",
           position: "relative",
         }}
         justify="center"
@@ -23,7 +23,7 @@ const Hero = () => {
         <Grid.Container
           gap={2}
           direction="row"
-          justify="center"
+          justify="flex-start"
           alignItems="center"
         >
           <Grid
@@ -34,7 +34,7 @@ const Hero = () => {
             alignItems="center"
           >
             <Grid xs={12} alignItems={"center"} justify={"center"}>
-              <Text h1>Pomoc drogowa</Text>
+              <Text h1>Całodobowa pomoc drogowa</Text>
             </Grid>
 
             <Grid xs={0} sm={12} role="section">
@@ -163,11 +163,13 @@ const Hero = () => {
             >
               <Grid alignItems={"center"} justify={"center"} role="section">
                 <Text size="$2xl">
-                  Jeśli jesteś osobą poszukującym nowych, niekonwencjonalnych
-                  atrakcji, nasza wypożyczalnia quadów jest idealnym
-                  rozwiązaniem dla Ciebie. Niezależnie od tego, czy wybierasz
-                  się na prywatną przejażdżkę z przyjaciółmi, możemy dostosować
-                  naszą ofertę do Twoich potrzeb.
+                  Jeśli jesteś osobą poszukującą nowych, niekonwencjonalnych
+                  atrakcji, nasza{" "}
+                  <Text b>
+                    wypożyczalnia quadów jest idealnym rozwiązaniem dla Ciebie.
+                  </Text>{" "}
+                  Naszą ofertę dostosujemy idealnie pod Twoje potrzeby oraz{" "}
+                  <Text b>gwarantujemy 100% czystej offroadowej zabawy.</Text>.
                 </Text>
               </Grid>
               <Grid

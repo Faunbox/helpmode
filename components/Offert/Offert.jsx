@@ -125,8 +125,8 @@ const Offert = () => {
                   przejażdżce po lesie lub zwiedzaniu pięknych miejsc wokół to
                   quad będzie dla Ciebie idealny.{" "}
                   <Text b>
-                    Możliwy transport do klienta - gratis przy najmie na dobę,
-                    inaczej 3zł/km
+                    Dowóz oraz odbiór ustalany indywidualnie. Na terenie Żywca
+                    przy najmie na dobę, transport we wskazane miejsce w cenie.
                   </Text>
                 </Text>
                 <Container
@@ -138,8 +138,8 @@ const Offert = () => {
                   <Text small>
                     QuadCf moto 520, wyciągarka, skrzynia automatyczna
                   </Text>
-                  <Spacer y={0.01} />
-                  <Text small>Doba: 500zł | 8h: 400zł | 1h: 150zł</Text>
+                  {/* <Spacer y={0.01} />
+                  <Text small>Doba: 500zł | 8h: 400zł | 1h: 150zł</Text> */}
                 </Container>
               </Card.Body>
               <Card.Divider />
